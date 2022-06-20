@@ -1,6 +1,6 @@
 # SpamScript
 Spamming script for telegram. You can use it to promote your service/channel/web-site. Free.\
-It's open source s you can edit as you wish
+It's open source so you can edit it as you wish
 # Installing PC (Windows)
 [Python](https://www.python.org/downloads/) 3+ required\
 [Git](https://git-scm.com/downloads) required\
@@ -29,7 +29,7 @@ Firstly you should be member of channel where you want to spam\
 Then use command /newchannel and after space enter channel id e.g.\
 /newchannel -12345678910\
 ## How to get channel id?
-You should use t.me/getmyid_bot ar something else.\
+You should use t.me/getmyid_bot or something else.\
 Just forward any message from your channel to t.me/getmyid_bot and get channel id (it starts at -)\
 ![Id of my test channel whick I created. It should start with dash (-)](https://github.com/hasker2/SpamScript/blob/main/screens/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-06-20%20154640.png)
 Then you should add you text(s)
