@@ -11,7 +11,7 @@ Spamming script for telegram. You can use it to promote your service/channel/web
 
 	git clone https://github.com/hasker2/SpamScript.git
 # Opening
-Update before opening
+[Update](https://github.com/hasker2/SpamScript/blob/main/README.md#updating) srcipt before opening
 
 	python SpamScript/main.py
 
