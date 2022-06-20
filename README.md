@@ -47,7 +47,7 @@ Remove channel by id
 
 ## Text commands
 /newtext HELLO - example.com👈
-Add new spam text (Program chooses random one from list)
+Add new spam text (Program chooses random one from texts which you added)
 
 /cleartexts
 Clear all texts (it can't be empty so if you don't add any text there are always be default - Hello!👈 Click on my logo)
