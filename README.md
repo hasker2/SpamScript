@@ -52,3 +52,5 @@ Add new spam text (Program chooses random one from texts which you added)
 
 /cleartexts
 Clear all texts (it can't be empty so if you don't add any text there are always be default - Hello!👈 Click on my logo)
+# Then
+Then it checks every posts in ypur channels. Sometimes it may print error in console because admin posted post without comments, or chat has some time limits, but bot script wont stop, it will just standart telegram API error.
