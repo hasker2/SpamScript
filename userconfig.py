@@ -1,5 +1,3 @@
-popup = 1
-
 #don't touch⬇!
 
 api_id=13740996
