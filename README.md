@@ -1,5 +1,6 @@
 # SpamScript
-Spamming script for telegram. You can use it to promote your service/channel/web-site. Free.
+Spamming script for telegram. You can use it to promote your service/channel/web-site. Free.\
+It's open source s you can edit as you wish
 # Installing PC (Windows)
 [Python](https://www.python.org/downloads/) 3+ required\
 [Git](https://git-scm.com/downloads) required\
