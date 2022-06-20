@@ -19,7 +19,7 @@ It's open source so you can edit it as you wish
 
 *[How to use](https://github.com/hasker2/SpamScript/blob/main/README.md#commands)*
 # Updating
-### After update your texts and ids will dessapeare
+### After update your texts and ids will disapeare
 
 	cd SpamScript
 	
