@@ -2,8 +2,7 @@
 Spamming script for telegram. You can use it to promote your service/channel/web-site. Free.\
 It's open source so you can edit it as you wish
 # Installing PC (Windows)
-[Python](https://www.python.org/downloads/) 3+ required\
-[Git](https://git-scm.com/downloads) required\
+Firstly install [Python 3+](https://www.python.org/downloads/) and [Git](https://git-scm.com/downloads)
 *You should install pyrogram and termcolor*
 
 	pip install pyrogram termcolor
