@@ -26,7 +26,7 @@ It's open source so you can edit it as you wish
 	git pull
 # First settings
 Firstly you should be member of channel where you want to spam\
-Then use command /newchannel and after space enter channel id e.g.\
+Then use command /newchannel and after space enter id of this channel e.g.\
 /newchannel -12345678910\
 ## How to get channel id?
 You should use [t.me/getmyid_bot](t.me/getmyid_bot) or something else.\
