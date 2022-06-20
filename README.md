@@ -4,9 +4,9 @@ It's open source so you can edit it as you wish
 # Installing PC (Windows)
 [Python](https://www.python.org/downloads/) 3+ required\
 [Git](https://git-scm.com/downloads) required\
-*You should install pyrogram and termcolor(termcolor for better text)*
+*You should install pyrogram and termcolor*
 
-	pip install pyrogram
+	pip install pyrogram termcolor
 
 *Then clone this repository*
 
