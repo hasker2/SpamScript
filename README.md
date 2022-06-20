@@ -11,14 +11,14 @@ Spamming script for telegram. You can use it to promote your service/channel/web
 
 	git clone https://github.com/hasker2/SpamScript.git
 # Opening
-Undate, the open
+Update before opening
 
 	python SpamScript/main.py
-
-	apt-get update
 
 # Updating
 
 	cd SpamScript
+	
+*Then write 'git pull'*
 	
 	git pull
