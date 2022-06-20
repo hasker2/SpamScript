@@ -14,7 +14,8 @@ It's open source so you can edit it as you wish
 # Opening
 [Update](https://github.com/hasker2/SpamScript/blob/main/README.md#updating) srcipt before opening
 
-	python SpamScript/main.py
+	cd spamscript
+	python main.py
 
 *[How to use](https://github.com/hasker2/SpamScript/blob/main/README.md#commands)*
 # Updating
