@@ -19,6 +19,7 @@ It's open source so you can edit it as you wish
 
 *[How to use](https://github.com/hasker2/SpamScript/blob/main/README.md#commands)*
 # Updating
+### After update your texts and ids will dessapeare
 
 	cd SpamScript
 	
@@ -53,4 +54,4 @@ Add new spam text (Program chooses random one from texts which you added)
 /cleartexts
 Clear all texts (it can't be empty so if you don't add any text there are always be default - Hello!👈 Click on my logo)
 # Then
-Then it checks every posts in your channels. Sometimes it may print error in console because admin posted post without comments, or chat has some time limits, but bot script wont stop, it will just standart telegram API error. Even if script somehow stops just relaunch it using [this commands](https://github.com/hasker2/SpamScript#opening)
+Then it checks every posts in your channels. Sometimes it may print error in console because admin posted post without comments, or chat has some time limits, but bot script wont stop, it will just standart telegram API error. Even if script somehow stops just relaunch it using [this commands](https://github.com/hasker2/SpamScript#opening), all your texts and chat ids saved in databases
