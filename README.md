@@ -7,6 +7,7 @@ Spamming script for telegram. You can use it to promote your service/channel/web
 	pip install pyrogram
 
 *Then clone this repository*\
+
 	git clone https://github.com/hasker2/SpamScript.git
 # Opening
 	python SpamScript/main.py
