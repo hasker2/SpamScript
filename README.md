@@ -15,7 +15,7 @@ Spamming script for telegram. You can use it to promote your service/channel/web
 
 	python SpamScript/main.py
 
-*[How to use](https://github.com/hasker2/SpamScript/blob/main/README.md#updating)*
+*[How to use](https://github.com/hasker2/SpamScript/blob/main/README.md#commands)*
 # Updating
 
 	cd SpamScript
