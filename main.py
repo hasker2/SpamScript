@@ -6,6 +6,7 @@ import sqlite3 as sl
 import configparser
 from userconfig import *
 import os
+from termcolor import colored
 
 print('getting channel ids')
 with sl.connect('channelids.db', check_same_thread=False) as con:
@@ -29,6 +30,13 @@ with sl.connect('texts.db', check_same_thread=False) as con:
             spam.append(text)
     print(spam)
 
+if not channels:
+    print(colored('WARNING\nCHANNEL IDS LIST IS EMPTY\nUse "/nechannels -12345678910" to add new one', 'red'))
+    time.sleep(1)
+
+if not spam:
+    print(colored('WARNING\nTEXT LIST IS EMPTY, BOT WILL SPAM WITH DEFAULT ONE - "Hello!👈 Click on my logo"\nUse "/newtext YOUR TEXT" to add new one', 'red'))
+    time.sleep(1)
 print('''
 ░██████╗██████╗░░█████╗░███╗░░░███╗░██████╗░█████╗░██████╗░██╗██████╗░████████╗
 ██╔════╝██╔══██╗██╔══██╗████╗░████║██╔════╝██╔══██╗██╔══██╗██║██╔══██╗╚══██╔══╝
@@ -143,8 +151,8 @@ def channelcheck(_, message):
         try:
             m = app.get_discussion_message(message.sender_chat.id, message.id)
             m.reply(random.choice(spam))
-        except Exception as err:
-            print('ERROR:' + err)
+        except IndexError:
+            m.reply('Hello!👈 Click on my logo')
         print(f'Spam was posted in "{message.sender_chat.title}" channel comments')
 
 app.run()
