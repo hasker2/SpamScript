@@ -8,5 +8,5 @@ Spamming script for telegram. You can use it to promote your service/channel/web
 
 *Then clone this repository*\
 ```git clone https://github.com/hasker2/SpamScript.git```
-#Opening
+# Opening
 ```python SpamScript/main.py```
