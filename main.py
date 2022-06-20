@@ -30,11 +30,11 @@ with sl.connect('texts.db', check_same_thread=False) as con:
             spam.append(text)
     print(spam)
 
-if not channels:
+if not channels: #чи список channelids пустий
     print(colored('WARNING\nCHANNEL IDS LIST IS EMPTY\nUse "/nechannels -12345678910" to add new one', 'red'))
     time.sleep(1)
 
-if not spam:
+if not spam: #чи список spam пустий
     print(colored('WARNING\nTEXT LIST IS EMPTY, BOT WILL SPAM WITH DEFAULT ONE - "Hello!👈 Click on my logo"\nUse "/newtext YOUR TEXT" to add new one', 'red'))
     time.sleep(1)
 print('''
@@ -46,26 +46,20 @@ print('''
 ╚═════╝░╚═╝░░░░░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░░░░╚═╝░░░''')
 print('\nMy GitUb - https://github.com/hasker2\n\nScript GitUb - https://github.com/hasker2/SpamScript')
 
-app = Client("my account", api_id=api_id, api_hash=api_hash)
-
-
-@app.on_message(filters.command("help") & filters.me)
-def help(_, message):
-    print(popup)
-    message.reply_text('Firstly you shoud join to channel chat (tutorial video upper)\nSecondary you should enter .newchannel and channel ')
+app = Client("my account", api_id=api_id, api_hash=api_hash) #бере з userconfig.py
 
 #----------------
 #channel commands
 #----------------
 
-@app.on_message(filters.command("newchannel") & filters.me)
+@app.on_message(filters.command("newchannel") & filters.me) #добавити новий ід каналу
 def addnewchannel(_, message):
     #app.delete_messages(chat_id=message.chat.id, message_ids=message.id, revoke=True)
-    channelid = message.text.split("/newchannel ", maxsplit=1)
+    channelid = message.text.split("/newchannel ", maxsplit=1) # відділяє ід від повідомлення
     try:
-        channelid = channelid[1]
+        channelid = channelid[1] #бере двугий елемент з channelid (починає рахувати від 0 а не від 1)
         time.sleep(0.5)
-        if channelid[0] == '-':
+        if channelid[0] == '-': #перевіряє чи текст починається на - бо ід каналів завжди починаються на -
             message.reply_text('Your new channel id: ' + channelid)
             try:
                 with sl.connect('channelids.db', check_same_thread=False) as con:
@@ -74,7 +68,7 @@ def addnewchannel(_, message):
                         f"INSERT INTO channelids VALUES ('{int(channelid)}')")
             except:
                 pass
-            channels.append(int(channelid))
+            channels.append(int(channelid)) #добавляє ід в список
             print(channels)
         else:
             message.reply_text('Enter your channel id after space, example: "/newchannel -12345678910"')
@@ -94,13 +88,13 @@ def clearchannels(_, message):
 
 @app.on_message(filters.command("removechannel") & filters.me)
 def removechannel(_, message):
-    channelid = message.text.split("/removechannel ", maxsplit=1)
+    channelid = message.text.split("/removechannel ", maxsplit=1) # відділяє ід від повідомлення
     try:
-        channelid = channelid[1]
+        channelid = channelid[1] #бере двугий елемент з channelid (починає рахувати від 0 а не від 1)
         time.sleep(0.5)
-        if channelid[0] == '-':
+        if channelid[0] == '-': #перевіряє чи текст починається на - бо ід каналів завжди починаються на -
             message.reply_text('You want remove channel with id: ' + channelid)
-            try:
+            try: #пробує видалити з бази channelids.db
                 with sl.connect('channelids.db', check_same_thread=False) as con:
                     cur = con.cursor()
                     cur.execute(
@@ -148,7 +142,7 @@ def cleartexts(_, message):
 def channelcheck(_, message):
     if message.sender_chat.id in channels:
         print(f'Trying to post spam in "{message.sender_chat.title}" channel comments')
-        try:
+        try: #якщо в списку нічого нема відповідає текстом Hello!👈 Click on my logo
             m = app.get_discussion_message(message.sender_chat.id, message.id)
             m.reply(random.choice(spam))
         except IndexError:
