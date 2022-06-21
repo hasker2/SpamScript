@@ -55,4 +55,4 @@ Clears all your texts (if you wont add any text script will post default one - H
 # Then
 Then it checks every posts in your channels. Sometimes it may print error in console because admin posted post without comments, or chat has some time limits, but bot script wont stop, it will just standart telegram API error. Even if script somehow stops just relaunch it using [this commands](https://github.com/hasker2/SpamScript#opening), all your texts and chat ids saved in databases
 ## Script commands
-/close - closing script without session exit
+/quit - closing script without session exit
