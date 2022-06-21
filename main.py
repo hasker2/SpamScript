@@ -5,7 +5,6 @@ import time
 import sqlite3 as sl
 import configparser
 from userconfig import *
-import os
 from termcolor import colored
 
 print('getting channel ids')
@@ -31,11 +30,11 @@ with sl.connect('texts.db', check_same_thread=False) as con:
     print(spam)
 
 if not channels: #чи список channelids пустий
-    print(colored('WARNING\nCHANNEL IDS LIST IS EMPTY\nUse "/nechannels -12345678910" to add new one', 'red'))
+    print(colored('WARNING\nCHANNEL IDS LIST IS EMPTY\nUse "/nechannels -12345678910" to add new one', 'yellow'))
     time.sleep(1)
 
 if not spam: #чи список spam пустий
-    print(colored('WARNING\nTEXT LIST IS EMPTY, BOT WILL SPAM WITH DEFAULT ONE - "Hello!👈 Click on my logo"\nUse "/newtext YOUR TEXT" to add new one', 'red'))
+    print(colored('WARNING\nTEXT LIST IS EMPTY, BOT WILL SPAM WITH DEFAULT ONE - "Hello!👈 Click on my logo"\nUse "/newtext YOUR TEXT" to add new one', 'yellow'))
     time.sleep(1)
 print('''
 ░██████╗██████╗░░█████╗░███╗░░░███╗░██████╗░█████╗░██████╗░██╗██████╗░████████╗
@@ -133,6 +132,10 @@ def cleartexts(_, message):
             cur.execute("DELETE FROM texts WHERE text != Null")
     except:
         pass
+
+@app.on_message(filters.command("quit") & filters.me)
+def close(_, message):
+    quit()
 
 #----------------
 #posting commands
