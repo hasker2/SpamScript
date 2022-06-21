@@ -40,7 +40,7 @@ Use command "/newtext Your text" to add your text.You can add more than one. If 
 /newchannel -12345678910\
 Add new channel id *(into channelids.db)*
 
-/clearchannels -12345678910\
+/clearchannels\
 Clear all channel ids
 
 /removechannel -12345678910\
