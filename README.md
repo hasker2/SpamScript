@@ -52,7 +52,7 @@ Add new spam text (Program chooses random one from texts which you added)
 
 /cleartexts\
 Clears all your texts (if you wont add any text script will post default one - Hello!👈 Click on my logo, but if you add anything it wont be use)
+## Script commands
+/quit - closing script without session exit (alternative to Ctrl + C in console)
 # Then
 Then it checks every posts in your channels. Sometimes it may print error in console because admin posted post without comments, or chat has some time limits, but bot script wont stop, it will just standart telegram API error. Even if script somehow stops just relaunch it using [this commands](https://github.com/hasker2/SpamScript#opening), all your texts and chat ids saved in databases
-## Script commands
-/quit - closing script without session exit
