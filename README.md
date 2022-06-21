@@ -13,16 +13,17 @@ Firstly install [Python 3+](https://www.python.org/downloads/) and [Git](https:/
 # Inctalling on termux
 
 	apt-get update
-*Download python*
+*Downloading python*
 
 	apt-get install git python
-*Download pyrogram and termcolor*
+*Downloading pyrogram and termcolor*
 
 	pip install pyrogram termcolor
 *Cloning repository*
 
 	git clone https://github.com/hasker2/SpamScript.git
-	
+
+[Then open it](https://github.com/hasker2/SpamScript/blob/main/README.md#opening)
 # Opening
 [Update](https://github.com/hasker2/SpamScript/blob/main/README.md#updating) srcipt before opening
 
