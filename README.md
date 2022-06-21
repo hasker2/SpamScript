@@ -13,7 +13,7 @@ Firstly install [Python 3+](https://www.python.org/downloads/) and [Git](https:/
 # Opening
 [Update](https://github.com/hasker2/SpamScript/blob/main/README.md#updating) srcipt before opening
 
-	cd spamscript
+	cd SpamScript
 	python main.py
 
 *[How to use](https://github.com/hasker2/SpamScript/blob/main/README.md#commands)*
