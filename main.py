@@ -127,6 +127,8 @@ def newtext(_, message):
             cur = con.cursor()
             cur.execute(
                 f"INSERT INTO texts VALUES ('{str(spamtext)}')")
+            spam.append(spamtext)
+            print(spam)
     except:
         pass
 
