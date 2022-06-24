@@ -5,7 +5,9 @@ import time
 import sqlite3 as sl
 import configparser
 from userconfig import *
+import os
 from termcolor import colored
+import sys
 
 print('getting channel ids')
 with sl.connect('channelids.db', check_same_thread=False) as con:
@@ -17,6 +19,7 @@ with sl.connect('channelids.db', check_same_thread=False) as con:
         for id in row:
             channels.append(id)
     print(channels)
+    cur.close()
 
 print('getting texts')
 with sl.connect('texts.db', check_same_thread=False) as con:
@@ -28,6 +31,7 @@ with sl.connect('texts.db', check_same_thread=False) as con:
         for text in row:
             spam.append(text)
     print(spam)
+    cur.close()
 
 if not channels: #чи список channelids пустий
     print(colored('WARNING\nCHANNEL IDS LIST IS EMPTY\nUse "/nechannels -12345678910" to add new one', 'yellow'))
@@ -46,6 +50,7 @@ print('''
 print('\nMy GitUb - https://github.com/hasker2\n\nScript GitUb - https://github.com/hasker2/SpamScript')
 
 app = Client("my account", api_id=api_id, api_hash=api_hash) #бере з userconfig.py
+print('Connected successfully')
 
 #----------------
 #channel commands
@@ -63,8 +68,8 @@ def addnewchannel(_, message):
             try:
                 with sl.connect('channelids.db', check_same_thread=False) as con:
                     cur = con.cursor()
-                    cur.execute(
-                        f"INSERT INTO channelids VALUES ('{int(channelid)}')")
+                    cur.execute(f"INSERT INTO channelids VALUES ('{int(channelid)}')")
+                    cur.close()
             except:
                 pass
             channels.append(int(channelid)) #добавляє ід в список
@@ -81,6 +86,7 @@ def clearchannels(_, message):
         with sl.connect('channelids.db', check_same_thread=False) as con:
             cur = con.cursor()
             cur.execute("DELETE FROM channelids WHERE ids != 0")
+            cur.close()
     except:
         pass
     message.reply_text('Channels list cleared')
@@ -98,6 +104,7 @@ def removechannel(_, message):
                     cur = con.cursor()
                     cur.execute(
                         f"DELETE FROM channelids WHERE ids={int(channelid)}")
+                    cur.close()
             except:
                 pass
             print(channels)
@@ -130,6 +137,7 @@ def cleartexts(_, message):
         with sl.connect('channelids.db', check_same_thread=False) as con:
             cur = con.cursor()
             cur.execute("DELETE FROM texts WHERE text != Null")
+            cur.close()
     except:
         pass
 
